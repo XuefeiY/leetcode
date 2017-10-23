@@ -53,10 +53,10 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        lookup = dict(((v, i) for i, v in enumerate(nums)))
+        lookup = {v:i for i, v in enumerate(nums)}
         for i, v in enumerate(nums):
-            if lookup.get(target - v):
-                return [i, lookup.get(target - v)]
+            if lookup[target - v]:
+                return [i, lookup[target - v]]
 
 Solution().twoSum([2, 7, 11, 2, 15], 9)
 # time complexity: O(n)

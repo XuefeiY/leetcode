@@ -57,7 +57,7 @@ class Solution:
         j = 0
 
         for i in range(1, len(A)):
-            if A[i] != A[j]:    # A[newTail] is the element to be compared, A[i] is the current element during traverse
+            if A[i] != A[j]:    # A[j] is the element to be compared, A[i] is the current element during traverse
                 j += 1
                 A[i], A[j+1] = A[j+1], A[i]]
 

@@ -1,1 +1,1 @@
-LeetCode problems solved in Python
+LeetCode problems solved in Python and SQL

@@ -13,6 +13,7 @@ Here are few examples.
 
 class Solution(object):
     # My Solution:
+    # Time Complexity: O(n)
     def searchInsert1(self, nums, target):
         """
         :type nums: List[int]

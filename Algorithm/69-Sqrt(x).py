@@ -1,6 +1,5 @@
 """
 Implement int sqrt(int x).
-
 Compute and return the square root of x.
 """
 
@@ -40,7 +39,9 @@ class Solution(object):
     Newton's Method is a method for finding successively better approximations to the roots (or zeroes) of a real-valued function.
     The process is repeated as:
     Xn+1 = Xn - f(Xn)/f'(Xn)
+    Geometrically, (Xn+1, 0) is the intersection of the x-axis and the tangent of the graph of f at (Xn, f (Xn)).
     
+    In this case:
     f(t) = t^2 - x, sqrt(x) is the root of f(t)
     """
     def mySqrt3(self, x):
@@ -52,3 +53,4 @@ class Solution(object):
 Solution().mySqrt1(65)
 Solution().mySqrt2(65)
 Solution().mySqrt3(65)
+

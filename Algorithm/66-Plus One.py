@@ -1,38 +1,48 @@
 """
-Given a non-negative integer represented as a non-empty array of digits, plus one to the integer.
+Given two binary strings, return their sum (also a binary string).
 
-You may assume the integer do not contain any leading zero, except the number 0 itself.
-
-The digits are stored such that the most significant digit is at the head of the list.
+For example,
+a = "11"
+b = "1"
+Return "100".
 """
 
 class Solution(object):
-    # My Solution:
-    def plusOne1(self, digits):
+    def addBinary(self, a, b):
         """
-        :type digits: List[int]
-        :rtype: List[int]
+        :type a: str
+        :type b: str
+        :rtype: str
         """
-        res = 0
-        for i in range(len(digits)):
-            res = res*10
-            res += digits[i]
-        res += 1
-        return [int(item) for item in list(str(res))]
-    
-    # Reference Solution:
-    def plusOne2(self, digits):
-        for i in range(len(digits)-1, -1, -1):
-            if digits[i] < 9:
-                digits[i] = digits[i] + 1
-                return digits
+        n1 = len(a)
+        n2 = len(b)
+        n = min(n1, n2)
+        c = [0]*(n+1)
+        temp = 0
+        for i in range(n):
+            if int(a[n1-1-i]) + int(b[n2-1-i]) + temp >= 2:
+                c[len(c)-1-i] = int(a[n1-1-i]) + int(b[n2-1-i]) + temp - 2
+                temp = 1
             else:
-                digits[i] = 0
-        digits.insert(0, 1)
-        return digits   
+                c[len(c)-1-i] = int(a[n1-1-i]) + int(b[n2-1-i])
+                temp = 0
+                
+        if temp == 1:
+            c[0] = 1
+        else:
+            c = c[1:]
     
+        if n1 > n2:
+            a_new = a[0:n1-n2]+[0]*n2
+            c = self.addBinary(a_new, c)
+            
+        if n2 > n1:
+            b_new = b[0:n2-n1]+[0]*n1
+            c = self.addBinary(b_new, c)
+        return c
     
-Solution().plusOne1([1,2,3,4])
-Solution().plusOne2([9,9,9,9]) 
+Solution().addBinary('111', '101')
+Solution().addBinary('11', '1')
+                
 
     

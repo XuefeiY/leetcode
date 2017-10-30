@@ -33,11 +33,11 @@ class Solution(object):
             c = c[1:]
     
         if n1 > n2:
-            a_new = a[0:n1-n2]+[0]*n2
+            a_new = list(a[0:n1-n2])+[0]*n2
             c = self.addBinary(a_new, c)
             
         if n2 > n1:
-            b_new = b[0:n2-n1]+[0]*n1
+            b_new = list(b[0:n2-n1])+[0]*n1
             c = self.addBinary(b_new, c)
         return c
     

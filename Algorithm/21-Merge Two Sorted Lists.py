@@ -4,7 +4,7 @@ Merge two sorted linked lists and return it as a new list. The new list should b
 
 # Definition for singly-linked list.
 class ListNode(object):
-    def __init__(self, x):
+    def __init__(self, x):        # initialization
         self.val = x
         self.next = None
     def __repr__(self):           # representation     
@@ -30,7 +30,8 @@ class Solution(object):
         L = sorted(L1+L2)
         
         def list_to_link(lst):
-            """Takes a Python list and returns a Link with the same elements.
+            """
+            Takes a Python list and returns a Link with the same elements.
             """
             if len(lst) == 1:
                 return ListNode(lst[0])

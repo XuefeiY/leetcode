@@ -8,6 +8,7 @@ Return "100".
 """
 
 class Solution(object):
+    # My Solution: Recursion
     def addBinary(self, a, b):
         """
         :type a: str
@@ -18,22 +19,24 @@ class Solution(object):
         n2 = len(b)
         n = min(n1, n2)
         c = [0]*(n+1)
-        temp = 0
+        temp = 0       # carry flag
         
-
-        for i in range(n):
+        # for the part with the same length
+        for i in range(n):    # start from the last digit
             if int(a[n1-1-i]) + int(b[n2-1-i]) + temp >= 2:
                 c[len(c)-1-i] = int(a[n1-1-i]) + int(b[n2-1-i]) + temp - 2
                 temp = 1
             else:
                 c[len(c)-1-i] = int(a[n1-1-i]) + int(b[n2-1-i])
                 temp = 0
-                
+        # the first digit of the sum       
         if temp == 1:
-            c[0] = 1
+            c[0] = 1      # carry bit
         else:
-            c = c[1:]
+            c = c[1:]     # no carry bit
     
+    
+        # for the part with longer length
         if n1 > n2:
             a_new = list(a[0:n1-n2])+[0]*n2
             c = self.addBinary(a_new, c)

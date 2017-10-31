@@ -30,7 +30,8 @@ class Solution(object):
         L = sorted(L1+L2)
         
         def list_to_link(lst):
-            """Takes a Python list and returns a Link with the same elements.
+            """
+            Takes a Python list and returns a Link with the same elements.
             """
             if len(lst) == 1:
                 return ListNode(lst[0])

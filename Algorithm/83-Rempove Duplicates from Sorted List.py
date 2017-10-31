@@ -52,7 +52,10 @@ class Solution(object):
                 p = p.next
         return head
     
-    # Two Pointers
+    # Three Pointers
+    # 1. Build pointer p which will traverse the whole linked list
+    # 2. Build pointer q which will traverse node after p, and compare it with p
+    # 3. Build pointer head which keeps nodes who need removal, and concatenate its back and forth
     def deleteDuplicates3(self, head):
         p = q = head
         while p:

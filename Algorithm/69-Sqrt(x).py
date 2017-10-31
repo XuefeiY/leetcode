@@ -4,7 +4,7 @@ Compute and return the square root of x.
 """
 
 class Solution(object):
-    # My Soution
+    # My Soution: Brute force
     # Time:  O(n)
     # Space: O(1)
     def mySqrt1(self, x):

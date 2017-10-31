@@ -4,7 +4,7 @@ Merge two sorted linked lists and return it as a new list. The new list should b
 
 # Definition for singly-linked list.
 class ListNode(object):
-    def __init__(self, x):
+    def __init__(self, x):        # initialization
         self.val = x
         self.next = None
     def __repr__(self):           # representation     

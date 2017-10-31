@@ -41,7 +41,7 @@ Solution().removeDuplicates(None)
 
 # Reference Solution:
 """
-Using a pointer j, when i traverse the array and meet an element different from A[j], swatch A[i] and A[j], j=j+1. 
+Using a pointer j, when i traverse the array and meet an element different from A[j], j=j+1, swatch A[i] and A[j]. 
 Then i proceed to traverse the array.
 """
 class Solution:
@@ -56,8 +56,7 @@ class Solution:
         for i in range(1, len(A)):
             if A[i] != A[j]:    # A[j] is the element to be compared, A[i] is the current element during traverse
                 j += 1
-                A[i], A[j+1] = A[j+1], A[i]]
-
+                A[i], A[j] = A[j], A[i]
         return j + 1
     
 Solution().removeDuplicates2([1,1,2,3,4,4])

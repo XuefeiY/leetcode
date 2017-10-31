@@ -9,6 +9,7 @@ Return "100".
 
 class Solution(object):
     # My Solution: Recursion
+    # undesirable time complexity using recursion
     def addBinary1(self, a, b):
         """
         :type a: str

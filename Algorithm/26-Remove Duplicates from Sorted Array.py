@@ -37,7 +37,6 @@ Solution().removeDuplicates(None)
 
 
 
-
 # Reference Solution:
 """
 Using a pointer j, when i traverse the array and meet an element different from A[j], j=j+1, swatch A[i] and A[j]. 

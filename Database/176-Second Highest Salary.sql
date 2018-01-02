@@ -18,10 +18,18 @@ For example, given the above Employee table, the query should return 200 as the 
 "
 
 --sort top two then bottom one
-SELECT TOP 1 Salary AS SecondHighestSalary
-FROM (
-SELECT TOP 2 Salary
-FROM Employee
-ORDER BY Salary DESC)  toptwo
-ORDER BY Salary
 
+--SELECT TOP 1 Salary AS SecondHighestSalary
+--FROM (
+--SELECT TOP 2 Salary
+--FROM Employee
+--ORDER BY Salary DESC)  toptwo
+--ORDER BY Salary
+
+--TOP doesn't work in mysql
+
+
+--If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.
+SELECT IFNULL(
+(SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1),
+NULL) AS SecondHighestSalary
